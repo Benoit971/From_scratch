@@ -1,0 +1,42 @@
+/* Fil rouge : selecteur, dimensions, couleurs */
+/* Texte */
+/* Background */
+/* Boxes */
+/* Positionning */
+/* Flex */
+/* Grid */
+/* Pseudo classe */
+/* débug */
+/* Responsive */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap'); /* Importation de la police Playfair Display à partir de google */
+@font-face {
+    font-family: "font-1"; /*nom avec lequelle on l'appel dans le fichier css pour aller plus vite*/
+    src: url(./assets/NotoSans-Medium.ttf);
+}
+
+body {
+    font-family: 'font-1', serif;
+    background: url(./assets/coucher-soleil.jpg) no-repeat fixed center/cover; /*center/cover pour voir le centre de l'image, sinon right ou left */
+    /* background: url(./assets/coucher-soleil.jpg) no-repeat fixed center/cover; permet de ne pas répéter l'image si le site est grand et le fixed 
+    fait que l'image ne boue jamais*/
+    height: 100vh; /* hauteur de l'élément body (avec 100 vh etant 100% de l'écran de l'utilisateur)*/
+}
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 2.5rem; /* il vaut mieux parler en rem pour les titres*/
+    color: rgb(196, 196, 252); /* ici c est en RGB, si on met de l'opacité en est en rgba*/
+    text-shadow: 4px 3px 0px #378f8f8e; /* x y flou , à tchéker dans la console*/ 
+    text-align: center;
+    font-family: 'Playfair Display', serif; /* Police parisienne ou si le navigateur ne connait pas, il prend cursive*/
+}
+
+main {
+    background: whitesmoke;
+    width: 85%; /* en pourcentage permet de prendre le pourcentage voulu peut importe l'écran */
+    min-height: 500px /* généralement on le met en pixel car on peut scroller */;
+    margin: 70px 50px; /*avec 2 valeurs c'est marge hautbas et latérale. avec 4 valeurs c'est tous les cotés dans le sens des aiguilles d'une montre */
+    
+}
