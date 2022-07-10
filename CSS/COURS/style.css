@@ -14,13 +14,18 @@
     font-family: "font-1"; /*nom avec lequelle on l'appel dans le fichier css pour aller plus vite*/
     src: url(./assets/NotoSans-Medium.ttf);
 }
+/*
+*{ permet de mettre tout les margin et padding à une valeur
+    margin: 0px;
+    padding: 0px;
+}*/
 
 body {
     font-family: 'font-1', serif;
     background: url(./assets/coucher-soleil.jpg) no-repeat fixed center/cover; /*center/cover pour voir le centre de l'image, sinon right ou left */
     /* background: url(./assets/coucher-soleil.jpg) no-repeat fixed center/cover; permet de ne pas répéter l'image si le site est grand et le fixed 
     fait que l'image ne boue jamais*/
-    height: 100vh; /* hauteur de l'élément body (avec 100 vh etant 100% de l'écran de l'utilisateur)*/
+    /* height: 100vh; /* hauteur de l'élément body (avec 100 vh etant 100% de l'écran de l'utilisateur)*/
 }
 
 h1 {
@@ -37,6 +42,47 @@ main {
     background: whitesmoke;
     width: 85%; /* en pourcentage permet de prendre le pourcentage voulu peut importe l'écran */
     min-height: 500px /* généralement on le met en pixel car on peut scroller */;
-    margin: 70px 50px; /*avec 2 valeurs c'est marge hautbas et latérale. avec 4 valeurs c'est tous les cotés dans le sens des aiguilles d'une montre */
-    
+    /* margin: 70px 50px; /*avec 2 valeurs c'est marge hautbas et latérale. avec 4 valeurs c'est tous 
+    les cotés dans le sens des aiguilles d'une montre */
+    /* margin : 0 auto; /* pour centrer automatiquement selon la taille de la fenêtre */
+    margin: 10px auto;
+    padding: 15px ; /* à l'intérieur*/
+    border-radius: 15px;
+    box-shadow: 0px 2px 12px 5px rgba(0, 0, 0, 0.25);
+}
+
+.positionning {
+    border: 2px solid skyblue;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+
+h2 {
+    margin: 0px;
+}
+
+#circle {
+    height: 60px;
+    width: 60px;
+    background: skyblue;
+    padding: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    right: 110px;
+    box-shadow: 0 2px 12px 5px rgba(0, 0, 0, 0.135);
+    z-index: 1; /* permet de dire quel element est au dessus de l'autre (on peut mettre des nombres négatifs aussi*/
+}
+
+#rectangle {
+    height: 15px;
+    width: 100px; /*on peut mettre une taille en % par rapport au parent */
+    background: slateblue;
+    padding: 20px;
+    position: absolute;
+    bottom: 2px;
+    left: 50%; /* centre le coté gauche de 50% à gauche */
+    transform: translateX(-50%); /*permet à l'objet de revenir de 50% sur la gauche de sa taille pour centre l'objet */
 }
