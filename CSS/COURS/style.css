@@ -51,11 +51,17 @@ main {
     box-shadow: 0px 2px 12px 5px rgba(0, 0, 0, 0.25);
 }
 
-.positionning {
+.positionning,
+.flexbox,
+.grid {
     border: 2px solid skyblue;
     padding: 10px;
     margin-top: 20px;
     border-radius: 10px;
+    
+}
+/********** POSITIONNING *****/
+.positionning {
     position: relative;
 }
 
@@ -84,5 +90,96 @@ h2 {
     position: absolute;
     bottom: 2px;
     left: 50%; /* centre le coté gauche de 50% à gauche */
-    transform: translateX(-50%); /*permet à l'objet de revenir de 50% sur la gauche de sa taille pour centre l'objet */
+    transform: translateX(-50%) ; /*permet à l'objet de revenir de 50% sur la gauche de sa taille pour centre l'objet */
+
 }
+
+/************** FLEXBOX **********/
+ul {
+    display: flex; /*mets à la ligne les éléments ul */
+    justify-content: space-around;
+    padding: 0px; /*enlève le padding par défaut de 40 px de chrome*/
+}
+
+li {
+    list-style: none; /*permet de choisir un style de point ou les retirer avec none*/
+    font-size: 0.7rem;
+    height: 160px;
+    width: 160px;
+    background: turquoise;
+    /*centrer verticalement*/
+    display : flex; /* à mettre pour que l'interieur de la flexbox bouge par rapport a elle*/
+    align-items: center;
+    justify-content: center;
+}
+
+/*********GRID*****/
+.grid-container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    padding: 20px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "i1 i2"
+    "ta ta"
+    "bt bt";
+}
+input,
+textarea {
+    margin: 5px;
+    height: 45px;
+    border: 1px solid darkblue;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-family:"font-1" ;
+}
+#firstname {
+    grid-area: i1;
+}
+
+#surname {
+    grid-area: i2;
+}
+textarea {
+    grid-area: ta;
+    resize: none; /* empeche l'utilisateur de changer la taille de la zone de texte pour pas foutre le bordel*/
+}
+
+input[type="submit"]{
+    grid-area: bt;
+    cursor: pointer;
+    background: grey;
+    transition: 0.4s; /*en lien avec le hover*/
+}
+
+input[type="submit"]:hover{ /* hover ->Permet de modifier le style quand le curseur passe sur le bouton*/
+    background: blue;
+}
+
+/*******RESPONSIVE********/
+@media screen and (max-width:1000px) {  
+
+    .grid-container {
+        display: block;
+    }
+}
+
+@media screen and (max-width:780px){
+    form {
+        grid-template: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "i1"
+        "i2"
+        "ta"
+        "bt";
+    }
+}
+
+
