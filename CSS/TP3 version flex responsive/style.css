@@ -105,3 +105,71 @@ button{
 .img-investisseur img{
     height: 60px;
 }
+
+/* ************** media queries**************/
+/******responsive tablette *******/
+@media screen and (max-width: 870px) {
+
+    .header-left-container h1{
+        font-size: 2.5rem;
+    }
+
+    .header-left-container h3{
+        font-size: 1rem;
+    }
+
+    .header-left-container h5{
+        font-size: 0.6rem;
+    }
+}
+
+/********mobile**********/
+
+@media screen and (max-width: 592px){
+
+    nav{
+        display: grid;
+        grid-template-columns: 35% 65%;
+    }
+    nav ul{
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        width: 100%;
+        font-size: 0.7rem;
+    }
+    header{
+        display: block;
+        width: 100%;
+    }
+
+    .header-left{
+        width: 100%;
+    }
+
+    .header-right{
+        width: 100%;
+    }
+
+    section{
+        display: block;
+    }
+
+    section .info-left{
+        width: 100%;
+        text-align: center;
+    }
+    .buttons{
+        align-items: center;
+    }
+
+    section .info-right{
+        width: 100%;
+        text-align: center;
+
+    }
+
+    .img-investisseur img{
+        height: 50px;
+    }
+}
+    
